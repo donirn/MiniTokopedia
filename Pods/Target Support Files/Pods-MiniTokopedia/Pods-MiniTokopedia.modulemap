@@ -1,0 +1,6 @@
+framework module Pods_MiniTokopedia {
+  umbrella header "Pods-MiniTokopedia-umbrella.h"
+
+  export *
+  module * { export * }
+}
