@@ -52,15 +52,31 @@ extension SearchViewController: UICollectionViewDataSource{
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout{
-    private static let itemsPerRow: CGFloat = 2
     private static let sectionInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+    private static let minimumLineSpacing: CGFloat = 2
+    private static let minimumInterItemSpacing: CGFloat = 1
+    private static let itemsPerRow = 2
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = SearchViewController.sectionInsets.left * (SearchViewController.itemsPerRow + 1)
+        let paddingSpace = SearchViewController.sectionInsets.left +
+            CGFloat(SearchViewController.itemsPerRow) * SearchViewController.minimumInterItemSpacing +
+            SearchViewController.sectionInsets.right
         let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / SearchViewController.itemsPerRow
+        let widthPerItem = availableWidth / CGFloat(SearchViewController.itemsPerRow)
         let heightPerItem = widthPerItem * 1.5
         
         return CGSize(width: widthPerItem, height: heightPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return SearchViewController.sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return SearchViewController.minimumLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return SearchViewController.minimumInterItemSpacing
     }
 }
