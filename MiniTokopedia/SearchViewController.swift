@@ -14,7 +14,13 @@ class SearchViewController: UIViewController {
     
     let networkManager = NetworkManager()
     var products = ProductCollection(values: [])
+    
     var loadedPage = 0
+    var minPrice = 100
+    var maxPrice = 8000000
+    var wholesale = true
+    var official = true
+    var gold = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +29,19 @@ class SearchViewController: UIViewController {
         collectionView.register(productViewCellNib, forCellWithReuseIdentifier: "productViewCell")
         
         // TODO: add loading indicator view
-        networkManager.getProducts(page: 0){products in
+        let parameters = SearchParameters(page: loadedPage, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
+        networkManager.getProducts(parameters: parameters){products in
             self.products = products
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFilter"{
+            if let filterVC = segue.destination as? FilterViewController{
+                filterVC.delegate = self
             }
         }
     }
@@ -66,11 +81,14 @@ extension SearchViewController: UICollectionViewDataSource{
         let lastItem = products.values.count - 1
         if indexPath.row == lastItem{
             // TODO: add loading indicator view
-            networkManager.getProducts(page: loadedPage + 1, completionHandler: { newProducts in
-                self.products.addProducts(newProducts.values)
-                self.loadedPage += 1
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+            let parameters = SearchParameters(page: loadedPage + 1, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
+            networkManager.getProducts(parameters: parameters, completionHandler: { newProducts in
+                if newProducts.values.count > 0{
+                    self.products.addProducts(newProducts.values)
+                    self.loadedPage += 1
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
                 }
             })
         }
@@ -104,5 +122,26 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return SearchViewController.minimumInterItemSpacing
+    }
+}
+
+extension SearchViewController: FilterViewControllerDelegate{
+    func filterViewController(_ filterVC: FilterViewController, didApply searchParameters: SearchParameters) {
+        products = ProductCollection(values: [])
+        collectionView.reloadData()
+        
+        loadedPage = searchParameters.page
+        minPrice = searchParameters.minPrice
+        maxPrice = searchParameters.maxPrice
+        wholesale = searchParameters.wholesale
+        official = searchParameters.official
+        gold = searchParameters.gold
+        
+        networkManager.getProducts(parameters: searchParameters){products in
+            self.products = products
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
 }

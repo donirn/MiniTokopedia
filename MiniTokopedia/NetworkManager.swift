@@ -14,8 +14,9 @@ import SwiftyJSON
 class NetworkManager: NSObject {
     private var isLoadingProducts = false
     
-    func getProducts(page: Int, completionHandler: @escaping (ProductCollection)->()){
-        let url = "https://ace.tokopedia.com/search/v2.5/product?q=samsung&pmin=10000&pmax=100000&wholesale=true&official=true&fshop=2&start=\(page*10)&rows=10"
+    func getProducts(parameters: SearchParameters, completionHandler: @escaping (ProductCollection)->()){
+        let fshop = parameters.gold ? "2" : "0"
+        let url = "https://ace.tokopedia.com/search/v2.5/product?q=samsung&pmin=\(parameters.minPrice)&pmax=\(parameters.maxPrice)&wholesale=\(parameters.wholesale)&official=\(parameters.official)&fshop=\(fshop)&start=\(parameters.page*10)&rows=10"
         
         if !isLoadingProducts{
             isLoadingProducts = true
