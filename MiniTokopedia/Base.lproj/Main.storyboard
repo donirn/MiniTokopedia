@@ -367,13 +367,6 @@
             </objects>
             <point key="canvasLocation" x="241" y="-150"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="vh1-9h-FkD">
-            <objects>
-                <viewControllerPlaceholder id="4KH-1l-YOm" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="77s-8f-hMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="CloseButton" width="18" height="18"/>
