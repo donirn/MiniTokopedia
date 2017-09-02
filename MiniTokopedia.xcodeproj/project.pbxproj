@@ -154,6 +154,7 @@
 				TargetAttributes = {
 					F2F798891F5966EE00F4AEA0 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LZM8AWAX7J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -384,6 +385,7 @@
 			baseConfigurationReference = 3DDE19801600B09CBAD0543F /* Pods-MiniTokopedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LZM8AWAX7J;
 				INFOPLIST_FILE = MiniTokopedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -398,6 +400,7 @@
 			baseConfigurationReference = ADC0053A735A8148DE2ABF04 /* Pods-MiniTokopedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LZM8AWAX7J;
 				INFOPLIST_FILE = MiniTokopedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
