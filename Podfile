@@ -6,6 +6,7 @@ target 'MiniTokopedia' do
   use_frameworks!
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage', '~> 3.2.0'
+  pod 'RangeSeekSlider', '~> 1.7.0'
   pod 'SwiftyJSON', '~> 3.1.4'
 
   # Pods for MiniTokopedia

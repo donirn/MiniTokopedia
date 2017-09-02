@@ -181,12 +181,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9t-04-So3">
-                                        <rect key="frame" x="6" y="66" width="308" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="iFe-dX-VKu"/>
-                                        </constraints>
-                                    </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whole Sale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-QS-MYv">
                                         <rect key="frame" x="8" y="116" width="86" height="21"/>
                                         <constraints>
@@ -204,6 +198,55 @@
                                             <constraint firstAttribute="width" constant="49" id="rTN-jO-SeB"/>
                                         </constraints>
                                     </switch>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhn-Gc-gb0" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                        <rect key="frame" x="8" y="66" width="304" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="pBC-Ot-eft"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="10000000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
+                                                <real key="value" value="8000000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
+                                                <color key="value" red="0.48627450979999998" green="0.64313725489999995" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
+                                                <color key="value" red="0.48627450979999998" green="0.64313725489999995" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="handleBorderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedHandleDiameterMultiplier">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minDistance">
+                                                <real key="value" value="1000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="step">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="labelsFixed" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -211,19 +254,19 @@
                                     <constraint firstAttribute="trailing" secondItem="Ryo-we-VT9" secondAttribute="trailing" constant="8" id="5b7-8R-2DJ"/>
                                     <constraint firstItem="FSj-Zf-Qah" firstAttribute="centerY" secondItem="EaA-QS-MYv" secondAttribute="centerY" id="5m7-4J-BcY"/>
                                     <constraint firstAttribute="trailing" secondItem="hBO-k8-PR2" secondAttribute="trailing" constant="8" id="HBb-9f-ZrV"/>
-                                    <constraint firstItem="EaA-QS-MYv" firstAttribute="top" secondItem="H9t-04-So3" secondAttribute="bottom" constant="20" id="KoW-KP-mAh"/>
                                     <constraint firstItem="hBO-k8-PR2" firstAttribute="top" secondItem="Ryo-we-VT9" secondAttribute="bottom" constant="8" id="Kro-Ox-tQN"/>
                                     <constraint firstItem="dH7-bI-KQx" firstAttribute="leading" secondItem="n5f-eL-IeJ" secondAttribute="leading" constant="8" id="L5O-tF-vEe"/>
+                                    <constraint firstItem="EaA-QS-MYv" firstAttribute="top" secondItem="nhn-Gc-gb0" secondAttribute="bottom" constant="13" id="PLo-Yc-juG"/>
                                     <constraint firstItem="hBO-k8-PR2" firstAttribute="width" secondItem="OOX-fU-Dhh" secondAttribute="width" id="PgP-GP-BZa"/>
                                     <constraint firstItem="dH7-bI-KQx" firstAttribute="top" secondItem="n5f-eL-IeJ" secondAttribute="top" constant="8" id="QUz-5N-CYC"/>
+                                    <constraint firstItem="nhn-Gc-gb0" firstAttribute="top" secondItem="OOX-fU-Dhh" secondAttribute="bottom" constant="8" id="VKb-Tu-rVg"/>
                                     <constraint firstItem="Ryo-we-VT9" firstAttribute="top" secondItem="n5f-eL-IeJ" secondAttribute="top" constant="8" id="aVG-cl-6OU"/>
                                     <constraint firstItem="hBO-k8-PR2" firstAttribute="leading" secondItem="OOX-fU-Dhh" secondAttribute="trailing" constant="8" id="ake-GR-m72"/>
-                                    <constraint firstItem="H9t-04-So3" firstAttribute="top" secondItem="OOX-fU-Dhh" secondAttribute="bottom" constant="8" id="b9b-mv-c9h"/>
                                     <constraint firstItem="OOX-fU-Dhh" firstAttribute="top" secondItem="dH7-bI-KQx" secondAttribute="bottom" constant="8" id="bZX-fC-H5h"/>
                                     <constraint firstItem="OOX-fU-Dhh" firstAttribute="leading" secondItem="n5f-eL-IeJ" secondAttribute="leading" constant="8" id="eVf-1y-t8S"/>
-                                    <constraint firstItem="H9t-04-So3" firstAttribute="leading" secondItem="n5f-eL-IeJ" secondAttribute="leading" constant="8" id="g7u-T3-Ojj"/>
+                                    <constraint firstItem="nhn-Gc-gb0" firstAttribute="leading" secondItem="n5f-eL-IeJ" secondAttribute="leading" constant="8" id="kd9-gb-rns"/>
                                     <constraint firstItem="EaA-QS-MYv" firstAttribute="leading" secondItem="n5f-eL-IeJ" secondAttribute="leading" constant="8" id="kso-Zl-KrK"/>
-                                    <constraint firstAttribute="trailing" secondItem="H9t-04-So3" secondAttribute="trailing" constant="8" id="mtU-Bc-6Rg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nhn-Gc-gb0" secondAttribute="trailing" constant="8" id="mDx-Xt-VA4"/>
                                     <constraint firstAttribute="trailing" secondItem="FSj-Zf-Qah" secondAttribute="trailing" constant="8" id="v1G-bB-VJ2"/>
                                 </constraints>
                             </view>
