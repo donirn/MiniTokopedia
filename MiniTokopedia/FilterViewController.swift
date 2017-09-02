@@ -13,6 +13,9 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var minPriceLabel: UILabel!
     @IBOutlet weak var maxPriceLabel: UILabel!
     @IBOutlet weak var priceSlider: RangeSeekSlider!
+    @IBOutlet weak var wholesaleSwitch: UISwitch!
+    @IBOutlet weak var goldMerchantButton: UIButton!
+    @IBOutlet weak var officialStoreButton: UIButton!
     
     var delegate: FilterViewControllerDelegate?
     var searchParameters: SearchParameters!
@@ -20,6 +23,18 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         priceSlider.delegate = self
+        setupUI(searchParameters: searchParameters)
+    }
+    
+    func setupUI(searchParameters: SearchParameters){
+        priceSlider.selectedMinValue = CGFloat(searchParameters.minPrice)
+        priceSlider.selectedMaxValue = CGFloat(searchParameters.maxPrice)
+        minPriceLabel.text = "Rp \(searchParameters.minPrice)"
+        maxPriceLabel.text = "Rp \(searchParameters.maxPrice)"
+        
+        wholesaleSwitch.isOn = searchParameters.wholesale
+        goldMerchantButton.isHidden = !searchParameters.gold
+        officialStoreButton.isHidden = !searchParameters.official
     }
     
     @IBAction func closeButtonDidTapped(_ sender: Any) {
@@ -30,6 +45,20 @@ class FilterViewController: UIViewController {
         searchParameters.page = 0
         delegate?.filterViewController(self, didApply: searchParameters)
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func wholesaleDidSwitched(_ sender: Any) {
+        searchParameters.wholesale = wholesaleSwitch.isOn
+    }
+    
+    @IBAction func goldMerchantButtonDidTapped(_ sender: Any) {
+        goldMerchantButton.isHidden = true
+        searchParameters.gold = false
+    }
+    
+    @IBAction func officialStoreButtonDidTapped(_ sender: Any) {
+        officialStoreButton.isHidden = true
+        searchParameters.official = false
     }
 }
 

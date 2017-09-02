@@ -197,6 +197,9 @@
                                             <constraint firstAttribute="height" constant="31" id="TRc-Jt-eMD"/>
                                             <constraint firstAttribute="width" constant="49" id="rTN-jO-SeB"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="wholesaleDidSwitched:" destination="36u-ko-ygt" eventType="valueChanged" id="nvw-pg-kT6"/>
+                                        </connections>
                                     </switch>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhn-Gc-gb0" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="16" y="74" width="296" height="37"/>
@@ -300,6 +303,9 @@
                                                     <constraint firstAttribute="width" constant="144" id="Yg6-5F-kEo"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="GoldMerchantButton"/>
+                                                <connections>
+                                                    <action selector="goldMerchantButtonDidTapped:" destination="36u-ko-ygt" eventType="touchUpInside" id="0rF-wA-jNn"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoz-uP-OJk">
                                                 <rect key="frame" x="144" y="0.0" width="0.0" height="34"/>
@@ -311,6 +317,9 @@
                                                     <constraint firstAttribute="width" constant="144" id="2ah-Cr-Spa"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="OfficialStoreButton"/>
+                                                <connections>
+                                                    <action selector="officialStoreButtonDidTapped:" destination="36u-ko-ygt" eventType="touchUpInside" id="WbL-CV-bLX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -372,9 +381,12 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="goldMerchantButton" destination="VrY-Sg-Ihn" id="QFa-4y-eNJ"/>
                         <outlet property="maxPriceLabel" destination="hBO-k8-PR2" id="voA-AK-pzl"/>
                         <outlet property="minPriceLabel" destination="OOX-fU-Dhh" id="xmH-Ot-Ekf"/>
+                        <outlet property="officialStoreButton" destination="OwC-SQ-t4q" id="8Ry-IZ-H5t"/>
                         <outlet property="priceSlider" destination="nhn-Gc-gb0" id="x3R-26-ZgJ"/>
+                        <outlet property="wholesaleSwitch" destination="FSj-Zf-Qah" id="aSy-gi-ZUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwI-GU-mFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
