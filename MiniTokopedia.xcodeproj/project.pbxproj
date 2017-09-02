@@ -58,6 +58,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F251A8F91F5AAFBD008540B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2F798A11F5A6C2200F4AEA0 /* Product.swift */,
+				F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F2F798811F5966EE00F4AEA0 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +91,8 @@
 				F2F7988D1F5966EE00F4AEA0 /* AppDelegate.swift */,
 				F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */,
 				F2F7989F1F596ACF00F4AEA0 /* NetworkManager.swift */,
-				F2F798A11F5A6C2200F4AEA0 /* Product.swift */,
+				F251A8F91F5AAFBD008540B6 /* Models */,
 				F2F798A91F5A882200F4AEA0 /* Views */,
-				F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */,
 				F2F798911F5966EE00F4AEA0 /* Main.storyboard */,
 				F2F798941F5966EE00F4AEA0 /* Assets.xcassets */,
 				F2F798961F5966EE00F4AEA0 /* LaunchScreen.storyboard */,
