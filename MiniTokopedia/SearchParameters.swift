@@ -8,11 +8,37 @@
 
 import UIKit
 
-struct SearchParameters {
-    let page: Int
-    let minPrice: Int
-    let maxPrice: Int
-    let wholesale: Bool
-    let official: Bool
-    let gold: Bool
+class SearchParameters: NSObject {
+    var page: Int
+    var minPrice: Int
+    var maxPrice: Int
+    var wholesale: Bool
+    var official: Bool
+    var gold: Bool
+    
+    init(page: Int, minPrice: Int, maxPrice: Int, wholesale: Bool, official: Bool, gold: Bool) {
+        self.page = page
+        self.minPrice = minPrice
+        self.maxPrice = maxPrice
+        self.wholesale = wholesale
+        self.official = official
+        self.gold = gold
+    }
+    
+    override init(){
+        self.page = 0
+        self.minPrice = 100
+        self.maxPrice = 8000000
+        self.wholesale = true
+        self.official = true
+        self.gold = true
+    }
+    
+    func nextPage() -> SearchParameters{
+        return SearchParameters(page: page + 1, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
+    }
+    
+    func nextPageLoaded(){
+        self.page += 1
+    }
 }

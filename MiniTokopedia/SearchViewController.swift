@@ -15,12 +15,7 @@ class SearchViewController: UIViewController {
     let networkManager = NetworkManager()
     var products = ProductCollection(values: [])
     
-    var loadedPage = 0
-    var minPrice = 100
-    var maxPrice = 8000000
-    var wholesale = true
-    var official = true
-    var gold = true
+    var searchParameters = SearchParameters()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +24,7 @@ class SearchViewController: UIViewController {
         collectionView.register(productViewCellNib, forCellWithReuseIdentifier: "productViewCell")
         
         // TODO: add loading indicator view
-        let parameters = SearchParameters(page: loadedPage, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
-        networkManager.getProducts(parameters: parameters){products in
+        networkManager.getProducts(parameters: searchParameters){products in
             self.products = products
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -42,6 +36,7 @@ class SearchViewController: UIViewController {
         if segue.identifier == "showFilter"{
             if let filterVC = segue.destination as? FilterViewController{
                 filterVC.delegate = self
+                filterVC.searchParameters = searchParameters
             }
         }
     }
@@ -81,11 +76,11 @@ extension SearchViewController: UICollectionViewDataSource{
         let lastItem = products.values.count - 1
         if indexPath.row == lastItem{
             // TODO: add loading indicator view
-            let parameters = SearchParameters(page: loadedPage + 1, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
-            networkManager.getProducts(parameters: parameters, completionHandler: { newProducts in
+            
+            networkManager.getProducts(parameters: searchParameters.nextPage(), completionHandler: { newProducts in
                 if newProducts.values.count > 0{
+                    self.searchParameters.nextPageLoaded()
                     self.products.addProducts(newProducts.values)
-                    self.loadedPage += 1
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
@@ -130,12 +125,7 @@ extension SearchViewController: FilterViewControllerDelegate{
         products = ProductCollection(values: [])
         collectionView.reloadData()
         
-        loadedPage = searchParameters.page
-        minPrice = searchParameters.minPrice
-        maxPrice = searchParameters.maxPrice
-        wholesale = searchParameters.wholesale
-        official = searchParameters.official
-        gold = searchParameters.gold
+        self.searchParameters = searchParameters
         
         networkManager.getProducts(parameters: searchParameters){products in
             self.products = products

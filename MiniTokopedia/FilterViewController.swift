@@ -15,12 +15,7 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var priceSlider: RangeSeekSlider!
     
     var delegate: FilterViewControllerDelegate?
-    
-    var minPrice = 100
-    var maxPrice = 8000000
-    var wholesale = true
-    var official = true
-    var gold = true
+    var searchParameters: SearchParameters!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +27,7 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func applyButtonDidTapped(_ sender: Any) {
-        let searchParameters = SearchParameters(page: 0, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
+        searchParameters.page = 0
         delegate?.filterViewController(self, didApply: searchParameters)
         dismiss(animated: true, completion: nil)
     }
@@ -42,8 +37,8 @@ extension FilterViewController: RangeSeekSliderDelegate{
     func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
         minPriceLabel.text = "Rp \(Int(minValue))"
         maxPriceLabel.text = "Rp \(Int(maxValue))"
-        minPrice = Int(minValue)
-        maxPrice = Int(maxValue)
+        searchParameters.minPrice = Int(minValue)
+        searchParameters.maxPrice = Int(maxValue)
     }
 }
 
