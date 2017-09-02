@@ -15,7 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        networkManager.getProducts()
+        networkManager.getProducts{products in
+            for product in products.values{
+                print("name: \(product.name) | price: \(product.price) | image: \(product.imageUri)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
