@@ -36,7 +36,7 @@ class SearchViewController: UIViewController {
         if segue.identifier == "showFilter"{
             if let filterVC = segue.destination as? FilterViewController{
                 filterVC.delegate = self
-                filterVC.searchParameters = searchParameters
+                filterVC.searchParameters = searchParameters.copy() as! SearchParameters
             }
         }
     }

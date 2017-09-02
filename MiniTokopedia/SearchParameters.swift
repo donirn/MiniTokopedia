@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchParameters: NSObject {
+class SearchParameters: NSObject, NSCopying {
     var page: Int
     var minPrice: Int
     var maxPrice: Int
@@ -40,5 +40,10 @@ class SearchParameters: NSObject {
     
     func nextPageLoaded(){
         self.page += 1
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = SearchParameters(page: page, minPrice: minPrice, maxPrice: maxPrice, wholesale: wholesale, official: official, gold: gold)
+        return copy
     }
 }
