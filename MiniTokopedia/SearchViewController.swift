@@ -20,6 +20,7 @@ class SearchViewController: UIViewController {
         
         let productViewCellNib = UINib(nibName: "ProductViewCell", bundle: nil)
         collectionView.register(productViewCellNib, forCellWithReuseIdentifier: "productViewCell")
+        
         networkManager.getProducts{products in
             self.products = products
             DispatchQueue.main.async {
@@ -47,5 +48,19 @@ extension SearchViewController: UICollectionViewDataSource{
         }
         
         return UICollectionViewCell()
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout{
+    private static let itemsPerRow: CGFloat = 2
+    private static let sectionInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let paddingSpace = SearchViewController.sectionInsets.left * (SearchViewController.itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / SearchViewController.itemsPerRow
+        let heightPerItem = widthPerItem * 1.5
+        
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
 }
