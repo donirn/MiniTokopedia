@@ -16,6 +16,8 @@
 		F2F798A01F596ACF00F4AEA0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7989F1F596ACF00F4AEA0 /* NetworkManager.swift */; };
 		F2F798A21F5A6C2200F4AEA0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F798A11F5A6C2200F4AEA0 /* Product.swift */; };
 		F2F798A41F5A779200F4AEA0 /* ProductCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */; };
+		F2F798A71F5A881C00F4AEA0 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F798A51F5A881C00F4AEA0 /* ProductViewCell.swift */; };
+		F2F798A81F5A881C00F4AEA0 /* ProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F798A61F5A881C00F4AEA0 /* ProductViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F2F7989F1F596ACF00F4AEA0 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F2F798A11F5A6C2200F4AEA0 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollection.swift; sourceTree = "<group>"; };
+		F2F798A51F5A881C00F4AEA0 /* ProductViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewCell.swift; path = Views/ProductViewCell.swift; sourceTree = "<group>"; };
+		F2F798A61F5A881C00F4AEA0 /* ProductViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductViewCell.xib; path = Views/ProductViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */,
 				F2F7989F1F596ACF00F4AEA0 /* NetworkManager.swift */,
 				F2F798A11F5A6C2200F4AEA0 /* Product.swift */,
+				F2F798A91F5A882200F4AEA0 /* Views */,
 				F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */,
 				F2F798911F5966EE00F4AEA0 /* Main.storyboard */,
 				F2F798941F5966EE00F4AEA0 /* Assets.xcassets */,
@@ -86,6 +91,15 @@
 				F2F798991F5966EE00F4AEA0 /* Info.plist */,
 			);
 			path = MiniTokopedia;
+			sourceTree = "<group>";
+		};
+		F2F798A91F5A882200F4AEA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2F798A51F5A881C00F4AEA0 /* ProductViewCell.swift */,
+				F2F798A61F5A881C00F4AEA0 /* ProductViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		FD91E591861040028F6BE95B /* Pods */ = {
@@ -161,6 +175,7 @@
 			files = (
 				F2F798981F5966EE00F4AEA0 /* LaunchScreen.storyboard in Resources */,
 				F2F798951F5966EE00F4AEA0 /* Assets.xcassets in Resources */,
+				F2F798A81F5A881C00F4AEA0 /* ProductViewCell.xib in Resources */,
 				F2F798931F5966EE00F4AEA0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +245,7 @@
 			files = (
 				F2F798A01F596ACF00F4AEA0 /* NetworkManager.swift in Sources */,
 				F2F798A21F5A6C2200F4AEA0 /* Product.swift in Sources */,
+				F2F798A71F5A881C00F4AEA0 /* ProductViewCell.swift in Sources */,
 				F2F798901F5966EE00F4AEA0 /* SearchViewController.swift in Sources */,
 				F2F7988E1F5966EE00F4AEA0 /* AppDelegate.swift in Sources */,
 				F2F798A41F5A779200F4AEA0 /* ProductCollection.swift in Sources */,

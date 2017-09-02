@@ -17,17 +17,15 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let productViewCellNib = UINib(nibName: "ProductViewCell", bundle: nil)
+        collectionView.register(productViewCellNib, forCellWithReuseIdentifier: "productViewCell")
         networkManager.getProducts{products in
-            for product in products.values{
-                print("name: \(product.name) | price: \(product.price) | image: \(product.imageUri)")
+            self.products = products
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
@@ -40,6 +38,14 @@ extension SearchViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productViewCell", for: indexPath) as? ProductViewCell{
+            let product = products.values[indexPath.row]
+            cell.nameLabel.text = product.name
+            cell.priceLabel.text = product.price
+            cell.imageView.image = #imageLiteral(resourceName: "placeholder")
+            return cell
+        }
+        
+        return UICollectionViewCell()
     }
 }
