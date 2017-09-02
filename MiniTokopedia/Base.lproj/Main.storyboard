@@ -386,6 +386,8 @@
                         <outlet property="minPriceLabel" destination="OOX-fU-Dhh" id="xmH-Ot-Ekf"/>
                         <outlet property="officialStoreButton" destination="OwC-SQ-t4q" id="8Ry-IZ-H5t"/>
                         <outlet property="priceSlider" destination="nhn-Gc-gb0" id="x3R-26-ZgJ"/>
+                        <outlet property="shopTypeButton" destination="5KQ-a1-SA2" id="7JX-1o-djv"/>
+                        <outlet property="shopTypeButtonLeadingConstraint" destination="C0V-Db-Sb8" id="Yj4-h8-MhN"/>
                         <outlet property="wholesaleSwitch" destination="FSj-Zf-Qah" id="aSy-gi-ZUw"/>
                     </connections>
                 </viewController>

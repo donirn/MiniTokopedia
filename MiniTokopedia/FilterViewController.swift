@@ -16,6 +16,8 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var wholesaleSwitch: UISwitch!
     @IBOutlet weak var goldMerchantButton: UIButton!
     @IBOutlet weak var officialStoreButton: UIButton!
+    @IBOutlet weak var shopTypeButton: UIButton!
+    @IBOutlet weak var shopTypeButtonLeadingConstraint: NSLayoutConstraint!
     
     var delegate: FilterViewControllerDelegate?
     var searchParameters: SearchParameters!
@@ -23,6 +25,11 @@ class FilterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         priceSlider.delegate = self
+        
+        let shopTypeButtonHorizontalPaddings = 2 * shopTypeButtonLeadingConstraint.constant
+        let shopTypeButtonLeftInset = view.frame.size.width - shopTypeButtonHorizontalPaddings - #imageLiteral(resourceName: "NextButton").size.width
+        shopTypeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: shopTypeButtonLeftInset, bottom: 0, right: 0)
+        
         setupUI(searchParameters: searchParameters)
     }
     
