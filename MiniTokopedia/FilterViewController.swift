@@ -67,6 +67,10 @@ class FilterViewController: UIViewController {
         officialStoreButton.isHidden = true
         searchParameters.official = false
     }
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
 }
 
 extension FilterViewController: RangeSeekSliderDelegate{
