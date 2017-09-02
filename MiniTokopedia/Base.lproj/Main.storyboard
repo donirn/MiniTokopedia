@@ -346,6 +346,11 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="maxPriceLabel" destination="hBO-k8-PR2" id="voA-AK-pzl"/>
+                        <outlet property="minPriceLabel" destination="OOX-fU-Dhh" id="xmH-Ot-Ekf"/>
+                        <outlet property="priceSlider" destination="nhn-Gc-gb0" id="x3R-26-ZgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwI-GU-mFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
