@@ -34,8 +34,10 @@ class FilterViewController: UIViewController {
     }
     
     func setupUI(searchParameters: SearchParameters){
+        // FIXME: did not update UI when called from resetButtonDidTapped
         priceSlider.selectedMinValue = CGFloat(searchParameters.minPrice)
         priceSlider.selectedMaxValue = CGFloat(searchParameters.maxPrice)
+        
         minPriceLabel.text = "Rp \(searchParameters.minPrice)"
         maxPriceLabel.text = "Rp \(searchParameters.maxPrice)"
         
@@ -46,6 +48,11 @@ class FilterViewController: UIViewController {
     
     @IBAction func closeButtonDidTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func resetButtonDidTapped(_ sender: Any) {
+        searchParameters = SearchParameters()
+        setupUI(searchParameters: searchParameters)
     }
     
     @IBAction func applyButtonDidTapped(_ sender: Any) {
