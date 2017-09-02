@@ -2,24 +2,21 @@ PODS:
   - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - DLRadioButton (1.4.9)
   - RangeSeekSlider (1.7.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AlamofireImage (~> 3.2.0)
-  - DLRadioButton (~> 1.4.9)
   - RangeSeekSlider (~> 1.7.0)
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  DLRadioButton: 7bb8a6e3768b572469ace553391ab4d2af6f9c19
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 8294994e06017b05699afaa6df523eb5db68bd45
+PODFILE CHECKSUM: 3a350f5db50b9e8568d5c1816256a0230b8c3aa0
 
 COCOAPODS: 1.3.1
