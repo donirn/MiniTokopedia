@@ -44,6 +44,16 @@ extension SearchViewController: UICollectionViewDataSource{
             cell.nameLabel.text = product.name
             cell.priceLabel.text = product.price
             cell.imageView.image = #imageLiteral(resourceName: "placeholder")
+            
+            cell.tag = indexPath.row
+            networkManager.getProductImage(url: product.imageUri, completionHandler: { image in
+                DispatchQueue.main.async {
+                    if cell.tag == indexPath.row, let image = image{
+                        cell.imageView.image = image
+                    }
+                }
+            })
+            
             return cell
         }
         

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 
 class NetworkManager: NSObject {
@@ -21,6 +22,16 @@ class NetworkManager: NSObject {
                 completionHandler(products)
             case .failure(let error):
                 print(error)
+            }
+        }
+    }
+    
+    func getProductImage(url: String, completionHandler: @escaping (UIImage?)->()){
+        Alamofire.request(url).responseImage { response in
+            if let image = response.result.value{
+                completionHandler(image)
+            } else {
+                completionHandler(nil)
             }
         }
     }
