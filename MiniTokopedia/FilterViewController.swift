@@ -46,6 +46,18 @@ class FilterViewController: UIViewController {
         officialStoreButton.isHidden = !searchParameters.official
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showShopTypePage"{
+            if let shopTypeVC = segue.destination as? ShopTypeViewController{
+                shopTypeVC.delegate = self
+                shopTypeVC.gold = searchParameters.gold
+                shopTypeVC.official = searchParameters.official
+            }
+        }
+    }
+    
     @IBAction func closeButtonDidTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -86,6 +98,14 @@ extension FilterViewController: RangeSeekSliderDelegate{
         maxPriceLabel.text = "Rp \(Int(maxValue))"
         searchParameters.minPrice = Int(minValue)
         searchParameters.maxPrice = Int(maxValue)
+    }
+}
+
+extension FilterViewController: ShopTypeViewControllerDelegate{
+    func showTypeViewController(_ shopTypeVC: ShopTypeViewController, didApplyGold gold: Bool, official: Bool) {
+        searchParameters.gold = gold
+        searchParameters.official = official
+        setupUI(searchParameters: searchParameters)
     }
 }
 

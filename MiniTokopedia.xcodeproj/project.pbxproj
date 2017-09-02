@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B6D588C8E3F5F58E6E9BC31 /* Pods_MiniTokopedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB82018AE4A9F775F6AF8B /* Pods_MiniTokopedia.framework */; };
+		F231E9681F5B35E60030F689 /* ShopTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F231E9671F5B35E60030F689 /* ShopTypeViewController.swift */; };
 		F251A8FE1F5ACC6A008540B6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F251A8FD1F5ACC6A008540B6 /* FilterViewController.swift */; };
 		F2E77EBF1F5B12EB006A031A /* SearchParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E77EBE1F5B12EB006A031A /* SearchParameters.swift */; };
 		F2F7988E1F5966EE00F4AEA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7988D1F5966EE00F4AEA0 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		3DDE19801600B09CBAD0543F /* Pods-MiniTokopedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTokopedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniTokopedia/Pods-MiniTokopedia.debug.xcconfig"; sourceTree = "<group>"; };
 		41BB82018AE4A9F775F6AF8B /* Pods_MiniTokopedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniTokopedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC0053A735A8148DE2ABF04 /* Pods-MiniTokopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTokopedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniTokopedia/Pods-MiniTokopedia.release.xcconfig"; sourceTree = "<group>"; };
+		F231E9671F5B35E60030F689 /* ShopTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTypeViewController.swift; sourceTree = "<group>"; };
 		F251A8FD1F5ACC6A008540B6 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		F2E77EBE1F5B12EB006A031A /* SearchParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchParameters.swift; sourceTree = "<group>"; };
 		F2F7988A1F5966EE00F4AEA0 /* MiniTokopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTokopedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 			children = (
 				F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */,
 				F251A8FD1F5ACC6A008540B6 /* FilterViewController.swift */,
+				F231E9671F5B35E60030F689 /* ShopTypeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				F2F798A21F5A6C2200F4AEA0 /* Product.swift in Sources */,
 				F2E77EBF1F5B12EB006A031A /* SearchParameters.swift in Sources */,
 				F2F798A71F5A881C00F4AEA0 /* ProductViewCell.swift in Sources */,
+				F231E9681F5B35E60030F689 /* ShopTypeViewController.swift in Sources */,
 				F2F798901F5966EE00F4AEA0 /* SearchViewController.swift in Sources */,
 				F2F7988E1F5966EE00F4AEA0 /* AppDelegate.swift in Sources */,
 				F2F798A41F5A779200F4AEA0 /* ProductCollection.swift in Sources */,
