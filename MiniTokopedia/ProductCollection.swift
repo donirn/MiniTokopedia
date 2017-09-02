@@ -25,4 +25,8 @@ class ProductCollection: NSObject {
         }
         self.init(values: products)
     }
+    
+    func addProducts(_ products: [Product]){
+        values.append(contentsOf: products)
+    }
 }

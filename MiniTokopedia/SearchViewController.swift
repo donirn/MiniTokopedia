@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     
     let networkManager = NetworkManager()
     var products = ProductCollection(values: [])
+    var loadedPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,8 @@ class SearchViewController: UIViewController {
         let productViewCellNib = UINib(nibName: "ProductViewCell", bundle: nil)
         collectionView.register(productViewCellNib, forCellWithReuseIdentifier: "productViewCell")
         
-        networkManager.getProducts{products in
+        // TODO: add loading indicator view
+        networkManager.getProducts(page: 0){products in
             self.products = products
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -58,6 +60,20 @@ extension SearchViewController: UICollectionViewDataSource{
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastItem = products.values.count - 1
+        if indexPath.row == lastItem{
+            // TODO: add loading indicator view
+            networkManager.getProducts(page: loadedPage + 1, completionHandler: { newProducts in
+                self.products.addProducts(newProducts.values)
+                self.loadedPage += 1
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
     }
 }
 
