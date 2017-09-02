@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B6D588C8E3F5F58E6E9BC31 /* Pods_MiniTokopedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB82018AE4A9F775F6AF8B /* Pods_MiniTokopedia.framework */; };
 		F2F7988E1F5966EE00F4AEA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7988D1F5966EE00F4AEA0 /* AppDelegate.swift */; };
-		F2F798901F5966EE00F4AEA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7988F1F5966EE00F4AEA0 /* ViewController.swift */; };
+		F2F798901F5966EE00F4AEA0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */; };
 		F2F798931F5966EE00F4AEA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F798911F5966EE00F4AEA0 /* Main.storyboard */; };
 		F2F798951F5966EE00F4AEA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F798941F5966EE00F4AEA0 /* Assets.xcassets */; };
 		F2F798981F5966EE00F4AEA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F798961F5966EE00F4AEA0 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		ADC0053A735A8148DE2ABF04 /* Pods-MiniTokopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniTokopedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniTokopedia/Pods-MiniTokopedia.release.xcconfig"; sourceTree = "<group>"; };
 		F2F7988A1F5966EE00F4AEA0 /* MiniTokopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTokopedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F7988D1F5966EE00F4AEA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2F7988F1F5966EE00F4AEA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F2F798921F5966EE00F4AEA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2F798941F5966EE00F4AEA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F798971F5966EE00F4AEA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F7988D1F5966EE00F4AEA0 /* AppDelegate.swift */,
-				F2F7988F1F5966EE00F4AEA0 /* ViewController.swift */,
+				F2F7988F1F5966EE00F4AEA0 /* SearchViewController.swift */,
 				F2F7989F1F596ACF00F4AEA0 /* NetworkManager.swift */,
 				F2F798A11F5A6C2200F4AEA0 /* Product.swift */,
 				F2F798A31F5A779200F4AEA0 /* ProductCollection.swift */,
@@ -230,7 +230,7 @@
 			files = (
 				F2F798A01F596ACF00F4AEA0 /* NetworkManager.swift in Sources */,
 				F2F798A21F5A6C2200F4AEA0 /* Product.swift in Sources */,
-				F2F798901F5966EE00F4AEA0 /* ViewController.swift in Sources */,
+				F2F798901F5966EE00F4AEA0 /* SearchViewController.swift in Sources */,
 				F2F7988E1F5966EE00F4AEA0 /* AppDelegate.swift in Sources */,
 				F2F798A41F5A779200F4AEA0 /* ProductCollection.swift in Sources */,
 			);
